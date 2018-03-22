@@ -18,6 +18,7 @@ import * as routes from '../constants/routes';
 import { firebase } from '../firebase';
 import withAuthentication from './withAuthentication';
 
+import APIAccess from './APIAccess';
 //import './App.css';
 
 const App = () =>
