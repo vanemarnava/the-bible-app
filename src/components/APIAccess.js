@@ -11,11 +11,16 @@ class APIAccess extends Component {
   componentDidMount(){
     this.fetchData();
   }
-  
+
   fetchData(){ // Smart component: interactua con el mundo exterior
-    fetch(`https://api.esv.org/v3/passage/html/?q=genesis`)
-    .then(response => console.log(response.json()))
-    .then(parsedJSON => this.setState({data: parsedJSON}))
+    fetch(`http://bible-api.com/romans 12:1-16`) //La API permite el acceso solo una vez que le indiquemos el libro y capítulo/versículo
+    .then(function(response) {
+    //console.log(response)
+    return response.json();
+  })
+    .then (function(data) {
+    console.log(data);
+  })
     .catch(error => console.log('Error',error))
   }
 
