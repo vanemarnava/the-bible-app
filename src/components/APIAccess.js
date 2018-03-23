@@ -19,25 +19,20 @@ constructor() {
  handleSubmit(event) {
    event.preventDefault();
    const {inputValue} = this.state;
-   fetch(`http://bible-api.com/${inputValue}`)
+   fetch(`http://bible-api.com/${inputValue}?verse_numbers=true`)
      .then(response => {
        return response.json();
      })
      .then(data => {
        console.log(data);
-       let text = data.text.map((pic) => {
+       /*render() {
          return (
-           <div className = "product" key = {pic.id}>
-           <h1 className=""></h1>
-             <p className = "titleProduct">{pic.title}</p>
-             <p>${pic.price}</p>
-             <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method = "post" target = "_top">
-               <input type = "hidden" name = "cmd" value = "_xclick" />
-               <input type = "image" src = "http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border = "0" name = "submit" alt = "Make payments with PayPal - it's fast, free and secure!" />
-             </form>
+           <div className = "Bible">
+              <h1 className="BibleTitle">{data.reference}</h1>
+              <p className = "BibleVerse">{data.text}</p>
            </div>
          );
-       });
+       });*/
      });
  };
  render() {
