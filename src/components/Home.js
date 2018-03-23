@@ -1,6 +1,5 @@
 import React from 'react';
-//import { Grid, Row, Col } from 'react-flexbox-grid';
-
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import withAuthorization from './withAuthorization';
 import NavBar from './NavBar/NavBar';
 
