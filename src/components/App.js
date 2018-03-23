@@ -19,11 +19,15 @@ import * as routes from '../constants/routes';
 import { firebase } from '../firebase';
 import withAuthentication from './withAuthentication';
 
+
+import APIAccess from './APIAccess';
+
 import './App.css';
 
-const App = () =>
+const App = () => 
   <Router>
     <div>
+      
       <Navigation />
 
       <Route exact path={routes.LANDING} component={() => <LandingPage />} />
@@ -35,6 +39,6 @@ const App = () =>
 
       <Route exact path={routes.USE_API} component={() => <UseApi />} />
     </div>
-  </Router>
 
+  </Router>
 export default withAuthentication(App);
