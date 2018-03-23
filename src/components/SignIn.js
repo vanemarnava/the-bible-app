@@ -1,23 +1,32 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-//import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import { SignUpLink } from './SignUp';
 import { PasswordForgetLink } from './PasswordForget';
 import { auth } from '../firebase';
 import * as routes from '../constants/routes';
 
+import './SignIn/SignIn.css'
+
 const SignInPage = ({ history }) =>
-  <div>
-    <div>
-      <div className="logBody" xs={12} md={12}>
-        <h1>Inicia Sesion</h1>
-        <SignInForm history={history} />
-        <PasswordForgetLink />
-        <SignUpLink />
-      </div>
-    </div>
-  </div>
+  <Grid>
+    <Row>
+      <Col className="" xs={12} sm={12} md={12} lg={12}>
+        <Row center='xs'>
+          <Col xs={8}>
+            <br />
+            <SignInForm history={history} />
+            <br />
+            <PasswordForgetLink />
+            <br />
+            <SignUpLink />
+
+          </Col>
+        </Row>
+      </Col>
+    </Row>
+  </Grid>
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -72,18 +81,22 @@ class SignInForm extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input
+          className='input-sign-in'
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           type="text"
-          placeholder="Correo Electrónico"
+          placeholder="Email Address"
         />
+        <br />
         <input
+          className='input-sign-in-2'
           value={password}
           onChange={event => this.setState(byPropKey('password', event.target.value))}
           type="password"
-          placeholder="Contraseña"
+          placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <br />
+        <button className='logButton' disabled={isInvalid} type="submit">
           Sign In
         </button>
 

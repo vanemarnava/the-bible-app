@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 
 import { auth } from '../firebase';
 
+import './PasswordForget/PasswordForget.css';
+
 const PasswordForgetPage = () =>
   <div>
-    <h1>PasswordForget</h1>
+    <h2>PasswordForget</h2>
     <PasswordForgetForm />
   </div>
 
@@ -50,13 +52,15 @@ class PasswordForgetForm extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input
+          className='change-input'
           value={this.state.email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           type="text"
-          placeholder="Correo Electrónico"
+          placeholder="Email Address"
         />
-       <button disabled={isInvalid} type="submit">
-          Resetear mi contraseña
+        <br />
+       <button className='logButton' disabled={isInvalid} type="submit">
+          Reset My Password
         </button>
 
         { error && <p>{error.message}</p> }
@@ -67,7 +71,7 @@ class PasswordForgetForm extends Component {
 
 const PasswordForgetLink = () =>
   <p>
-    <Link to="/pw-forget">Se te olvidó la contraseña?</Link>
+    <Link to="/pw-forget">Forgot Password?</Link>
   </p>
 
 export default PasswordForgetPage;

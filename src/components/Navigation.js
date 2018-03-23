@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import SignOutButton from './SignOut';
 import * as routes from '../constants/routes';
+
+import './Navigation/Navigation.css';
 
 const Navigation = (props, { authUser }) =>
   <div>
@@ -18,17 +21,31 @@ Navigation.contextTypes = {
 };
 
 const NavigationAuth = () =>
-  <ul>
-    <li><Link to={routes.LANDING}>Inicio</Link></li>
-    <li><Link to={routes.HOME}>Home</Link></li>
-    <li><Link to={routes.ACCOUNT}>Cuenta</Link></li>
-    <li><SignOutButton /></li>
-  </ul>
+
+  <Grid>
+    <Row>
+      <Col xs={12}>
+        <ul>
+          <li><Link to={routes.LANDING}>Landing</Link></li>
+          <li><Link to={routes.HOME}>Home</Link></li>
+          <li><Link to={routes.ACCOUNT}>Account</Link></li>
+          <li><Link to={routes.USE_API}>Search</Link></li>          
+          <li><SignOutButton /></li>
+        </ul>
+      </Col>
+    </Row>
+  </Grid>
 
 const NavigationNonAuth = () =>
-  <ul>
-    <li><Link to={routes.LANDING}>Inicio</Link></li>
-    <li><Link to={routes.SIGN_IN}>Inicia Sesión</Link></li>
-  </ul>
+  <Grid>
+    <Row>
+      <Col xs={12}>
+        <ul>
+          <li><Link to={routes.LANDING}>Landing</Link></li>
+          <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+        </ul>
+      </Col>
+    </Row>
+  </Grid>
 
 export default Navigation;
