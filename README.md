@@ -1,4 +1,4 @@
-#Bibliapp
+# Bibliapp
 
 
 Es una aplicación creada para la lectura y el estudio de la Biblia a través de tu móvil, diseñado como una herramienta de bolsillo muy útil para la lectura diaria.
@@ -95,8 +95,8 @@ Estos son los resultados del proceso
 Se crea el siguiente Sketch
 Se mejora el Sketch para testear
 
-![](src/img/b1.jpg)
-![](src/img/b2.jpg)
+![](src/img/sket.jpg)
+![](src/img/skett.jpg)
 
 El que tendrá función sólo en la busqueda por versículos.
 
@@ -105,6 +105,7 @@ Para finalizar, luego de tener definidas las pantallas y sus correcciones se org
 
 Para ver el avance de cada tarea, se realizan retrospectivas cada 2 horas.
 ##### Tareas Principales:
+
 -Buscar Api Biblia y utilizarla (massiel y Vanessa )día 1-2
 -Investigar React y crear componentes (Vanessa-Mariajosé) día 1-2
 -Firebase (Vanessa) día 2
