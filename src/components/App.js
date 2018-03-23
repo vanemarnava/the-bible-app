@@ -20,11 +20,14 @@ import withAuthentication from './withAuthentication';
 
 import APIAccess from './APIAccess';
 //import './App.css';
+//import NavBar from './NavBar/NavBar';
 
-const App = () =>
+const App = () => 
   <Router>
     <div>
+      
       <Navigation />
+
 
       <Route exact path={routes.LANDING} component={() => <LandingPage />} />
       <Route exact path={routes.SIGN_UP} component={() => <SignUpPage />} />
@@ -32,7 +35,12 @@ const App = () =>
       <Route exact path={routes.PASSWORD_FORGET} component={() => <PasswordForgetPage />} />
       <Route exact path={routes.HOME} component={() => <HomePage />} />
       <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
+
+
+      
     </div>
+
   </Router>
+
 
 export default withAuthentication(App);
